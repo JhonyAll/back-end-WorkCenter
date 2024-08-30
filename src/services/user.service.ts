@@ -8,7 +8,7 @@ export class UserService {
   }
 
   static async getUserById(id: number): Promise<User | null> {
-    const [rows] = await connection.query('SELECT * FROM Users WHERE id = ?', [id]);
+    const [rows] = (await connection.query('SELECT * FROM Users WHERE id = ?', [id]));
     console.log(rows)
     return null;
   }
